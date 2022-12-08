@@ -1,0 +1,18 @@
+
+    
+    h1 {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        }
+        p{
+        color: darksalmon;
+        margin: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        }
+        table, th, tr {
+        color: brown;
+        border: 1px solid;
+        }
