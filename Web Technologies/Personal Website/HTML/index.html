@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prabhu Pradhan-Personal Website</title>
    <link rel="stylesheet" href="style.css">
+   <script src="https://kit.fontawesome.com/f33d958d9d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
@@ -15,18 +16,101 @@
                 <ul>
                     <li><a href="#">Home </a></li>
                     <li><a href="#">About Me </a></li>
-                    <li><a href="#">My Family </a></li>
                     <li><a href="#">Hobbies </a></li>
+                    <li><a href="#">My Family </a></li>
                     <li><a href="#">Contact </a></li>
                     <li><a href="#">Refrences </a></li>
                 </ul>
             </nav>
             <div class="header-text"></div>
             <p>Computer Science Student</p>
-            <h1>Hello Everyone welcome to<br> <span>Prabhu Pradhan</span> personal website<h1>
+            <h1>Hello Everyone welcome to<br><span>Prabhu Pradhan</span> personal website<h1>
         </div>
         </div>
     </div>
-    
+    <!-- -----------------------------------------------about me------------------------------------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="leftColumn">
+                    <img src="100605.jpg">
+                </div>
+                <div class="rightColumn">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Ipsum aliquam repellat iure cum illo, magnam animi tenetur assumenda?
+                        Dolor sunt ipsa voluptatem saepe magni sed suscipit deleniti explicabo
+                        neque nam Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolore sunt.
+                        Aspernatur natus unde, fugiat rem magni est nam sapiente laboriosam corrupti assumenda
+                        ipsum asperiores expedita, aut eum. Voluptates, incidunt?</p>
+                        <div class="titles">
+                            <p class="links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="links"  onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Basic Of Java</span><br>Java OOP,Functions etc</li>
+                                <li><span>Leadership Skills</span><br>President of Sunrise Club</li>
+                                <li><span>Presentation Skills</span><br>Has presented in many topics</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Grade 10</span><br>Holy Bell English Secondary School</li>
+                                <li><span>College Level</span><br>Reliance International Academy</li>
+                                <li><span>Bachelors Level</span><br>Herald College Kathmandu</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ------------------------------------------------------------------Hobbies--------------------------------------------------------- -->
+<div id="hobbies">
+    <div class="container">
+        <h1 class="sub-title">My Hobbies</h1>
+        <div class="Hobbies-list">
+            <div>
+                <i class="fa-solid fa-gamepad"></i>
+                <h2>Playing sports</h2>
+                <p>From my childhood I love to play different soprts.
+                    I loved playing football, basketball, volleyball
+                ,Table Tennis, cricket and many maore games.In fact
+            I have won many prices playing the sports.I have won best defence award in volleyball and I 
+        became first in Table Tennis competition. </p>
+            </div>
+            <diV>
+                <i class="fa-solid fa-location-dot"></i>
+                <h2>Exploring Different Places</h2>
+                <p>I love to travel differnt new places and exlpore the
+                    culture of those places. I feel relief and relaxed when I visit
+                    new places.
+                </p>
+            </diV>
+            <div>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h2>Learning New Things</h2>
+                <p>As being a human being we all learn something new. So I love
+                    to learn something new everyday. It is ine of my Hobbies.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- --------------------------------------------My Family--------------------------------------------------------------------- -->
+    <script>
+        var tablinks=document.getElementsByClassName("links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
 </body>
 </html>
