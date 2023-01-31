@@ -13,14 +13,15 @@
         <div class="container">
             <nav>
                 <img src="Js.png" class="logo" alt="logo">
-                <ul>
-                    <li><a href="#">Home </a></li>
-                    <li><a href="#">About Me </a></li>
-                    <li><a href="#">Hobbies </a></li>
-                    <li><a href="#">My Family </a></li>
-                    <li><a href="#">Contact </a></li>
-                    <li><a href="#">Refrences </a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home </a></li>
+                    <li><a href="#about">About Me </a></li>
+                    <li><a href="#hobbies">Hobbies </a></li>
+                    <li><a href="#family">My Family </a></li>
+                    <li><a href="#contact">Contact </a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text"></div>
             <p>Computer Science Student</p>
@@ -138,20 +139,30 @@
             <div class="row">
                 <div class="left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p>prabhupradhan93@gmail.com</p>
-                    <p>9863620318</p>
+                    <p><i class="fa-sharp fa-solid fa-envelope"></i>prabhupradhan93@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>9863620318</p>
                     <div class="socialicons">
                         <a href="https://www.facebook.com/prabhu.pradhan.98"><i class="fa-brands fa-facebook"></i></a>
                         <a href="https://www.instagram.com/prabhu.pradhan.98/"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/prabhu-pradhan-b04876259/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/pradhanprabhu"></a><i class="fa-brands fa-github"></i></a>
                     </div>
-                </div>
-                <div class="right"></div>
-                <form>
-                    <input type="text" name="Name" placeholder="Your Name">
+                    <a href="https://drive.google.com/file/d/19uAfm5dSCPABhMJ71LC6nAL6pHhPS02Y/view?usp=sharing" target="_blank" class="button">Download CV</button>
+                      </a>
+                      
+                    </div>
+                <div class="right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
+                </div>
             </div>
+        </div>
+        <div class="Copyright">
+            <p>Copyright © Prabhu. Made with <i class="fa-solid fa-heart"></i> Prabhu Pradhan</p>
         </div>
     </div>
     <script>
@@ -168,5 +179,31 @@
             document.getElementById(tabname).classList.add("active-tab")
         }
     </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwt7sdKYAjFdW7svMBDEHCOSZtZYuBHXqAXKzQ1UMqTMOJc6dVJHpqVUKWPcE1fJP4X/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message Sent Successfully"
+                setTimeout(function(){
+                    msg.innerHTML =""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>
