@@ -55,9 +55,9 @@ nav ul li a::after{
     bottom: -8px;
     transition: 0.5s;
 }
+
 nav ul li a:hover::after{
     width: 100%;
- 
 }
 .header-text{
     margin-top: 20%;
@@ -67,9 +67,8 @@ nav ul li a:hover::after{
     font-size: 100px;
     margin-top: 40px;
 }
-.header-text h1 span{
-    color:  #FF0000;
-}
+
+
 /* ------------------------------about----------------------------------------------------------------------------------------------------*/
 #about{
      padding: 80px 0;
@@ -81,7 +80,7 @@ nav ul li a:hover::after{
     flex-wrap: wrap;
 }
 .leftColumn{
-    flex: basis 35%;/*width of the column will be 60% */
+    flex: basis 35%;/*width of the column will be 35% */
 }
 .leftColumn img{
     width: 80%;
@@ -289,6 +288,7 @@ nav ul li a:hover::after{
     font-weight: 600;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+    margin-top: 50px
 }
 .btn.btn2{
     display: inline-block;
